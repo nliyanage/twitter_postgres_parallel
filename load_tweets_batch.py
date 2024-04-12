@@ -36,7 +36,7 @@ def remove_nulls(s):
         return None
     else:
         return s.replace('\x00','\\x00')
-"""
+""" 
 def get_id_urls(url):
     '''
     Given a url, returns the corresponding id in the urls table.
