@@ -36,7 +36,7 @@ def remove_nulls(s):
         return None
     else:
         return s.replace('\x00','\\x00')
-
+'''
 
 def get_id_urls(url):
     '''
@@ -63,7 +63,7 @@ def get_id_urls(url):
         res = connection.execute(sql,{'url':url}).first()
     id_urls = res[0]
     return id_urls
-
+'''
 
 def batch(iterable, n=1):
     '''
@@ -218,7 +218,7 @@ def _insert_tweets(connection,input_tweets):
             'screen_name':remove_nulls(tweet['user']['screen_name']),
             'name':remove_nulls(tweet['user']['name']),
             'location':remove_nulls(tweet['user']['location']),
-            'id_urls':user_id_urls,
+            'url':remove_nulls(user_id_urls),
             'description':remove_nulls(tweet['user']['description']),
             'protected':tweet['user']['protected'],
             'verified':tweet['user']['verified'],
